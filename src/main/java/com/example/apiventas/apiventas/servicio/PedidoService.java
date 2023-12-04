@@ -10,16 +10,27 @@ import com.example.apiventas.apiventas.mapper.PedidoMapper;
 
 @Service
 public class PedidoService {
-    
+
     @Autowired
     PedidoMapper pedidoMapper;
 
-    public List<Pedido> obtenerPedidos(){
-        return pedidoMapper.obtenerPedidos();
+    public List<Pedido> obtenerPedidos(int idTipoPedido,String fechaInicio, String fechaFin) {
+        return pedidoMapper.obtenerPedidos(idTipoPedido,fechaInicio,fechaFin);
     }
 
-    public Pedido obtenerProductoPorId(int idProducto){
+    public Pedido obtenerPedidoPorId(int idProducto) {
         return pedidoMapper.obtenerPedidoPorId(idProducto);
+    }
+
+    public boolean registrar(Pedido pedido) {
+        boolean response = false;
+        try {
+            int r = pedidoMapper.registrar(pedido);
+            System.err.println(r);
+        } catch (Exception error) {
+            System.err.println(error.getMessage());
+        }
+        return response;
     }
 
 }

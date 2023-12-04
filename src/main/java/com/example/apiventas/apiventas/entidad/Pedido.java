@@ -2,6 +2,8 @@ package com.example.apiventas.apiventas.entidad;
 
 import java.util.Date;
 
+import org.hibernate.mapping.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,4 +23,5 @@ public class Pedido {
     private Date FechaRegistro;
     private Date FechaActualizacion;
     private boolean EsActivo;
+    private double Total;
 }

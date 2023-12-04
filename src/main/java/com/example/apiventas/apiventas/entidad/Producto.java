@@ -43,5 +43,8 @@ public class Producto {
     
     private boolean EsActivo;
     private Date FechaRegistro;
+    private Date FechaActualizacion;
 
+    private int IdUsuarioActualizacion;
+    private int IdUsuarioRegistro;
 }
